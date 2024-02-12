@@ -1,0 +1,42 @@
+<?php
+
+abstract class Veiculo
+{
+  protected $tipo;
+  protected $marca;
+  protected $ano;
+
+  public function __construct($dados)
+  {
+    $this->tipo = $dados[0];
+    $this->marca = $dados[1];
+    $this->ano = $dados[2];
+  }
+
+  public function get_tipo()
+  {
+    return $this->tipo;
+  }
+}
+
+class Automovel extends Veiculo
+{
+  public function apresentar()
+  {
+    return "Automovel da marca {$this->marca}, do ano {$this->ano}";
+  }
+}
+class Aviao extends Veiculo
+{
+  public function apresentar()
+  {
+    return "Aviao da marca {$this->marca}, do ano {$this->ano}";
+  }
+}
+class Barco extends Veiculo
+{
+  public function apresentar()
+  {
+    return "Barco da marca {$this->marca}, do ano {$this->ano}";
+  }
+}
